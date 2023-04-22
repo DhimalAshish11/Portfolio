@@ -1,0 +1,123 @@
+:root {
+  --color-orange: red;
+  --color-dark: black;
+
+  --body-bg: white;
+  --text-color: var(var(--color-dark));
+  --border-color: var(var(--color-dark));
+
+  /*  for darkmode */
+
+  --dark-bg: var(--color-dark);
+  --dark-text-color: white;
+  --dark-border-color: white;
+}
+
+body {
+  background: rgb(234, 234, 243);
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+
+/* checkbox */
+
+.wrapper {
+  background-color: var(--body-bg);
+  min-height: 100vh;
+  color: var(--text-color);
+}
+
+#darkmode {
+  position: fixed;
+  top: 6rem;
+  left: 2rem;
+  display: none;
+}
+.dark-mode-toogle {
+  top: 6rem;
+  left: 2rem;
+  position: fixed;
+}
+
+.dark-mode-toogle:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+  transition: all 0.5s;
+}
+/* 
+ dark mode activation */
+#darkmode:checked + .wrapper {
+  background-color: var(--dark-bg);
+  min-height: 100vh;
+  color: var(--dark-text-color);
+}
+header {
+  box-shadow: 0 0 10px 5px grey;
+  position: sticky;
+  top: 0;
+}
+
+/* header */
+.header {
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+}
+
+.logo > div:nth-child(1) h1 {
+  font-size: 1.8rem;
+}
+.line {
+  font-size: 1rem;
+}
+.line::before {
+  content: "";
+  width: 4px;
+  height: 40%;
+  left: 47%;
+  background: var(--color-orange);
+  position: absolute;
+}
+
+#check,
+.menu-icon {
+  display: none;
+}
+
+.navigation {
+  list-style: none;
+}
+.navigation li a:hover {
+  color: var(--color-orange);
+  transition: all 0.5s;
+}
+
+/* <!--  hero -->
+<!-- bannner -->
+<!--  skills -->
+<!--  project -->
+<!--  About me -->
+<!--  Footer--> */
