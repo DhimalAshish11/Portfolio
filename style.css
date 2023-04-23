@@ -4,13 +4,16 @@
 
   --body-bg: white;
   --text-color: var(var(--color-dark));
-  --border-color: var(var(--color-dark));
+  --border-color: var(--color-dark);
 
   /*  for darkmode */
 
   --dark-bg: var(--color-dark);
   --dark-text-color: white;
   --dark-border-color: white;
+}
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -27,13 +30,22 @@ body {
   display: flex;
   gap: 1rem;
 }
+.grid {
+  display: grid;
+  gap: 1rem;
+}
 
 a {
   text-decoration: none;
   color: inherit;
 }
+.title {
+  font-size: 2rem;
+  font-weight: bolder;
+  text-align: center;
+}
 .container {
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 
@@ -72,6 +84,7 @@ a {
 header {
   box-shadow: 0 0 10px 5px grey;
   position: sticky;
+  background-color: white;
   top: 0;
 }
 
@@ -79,6 +92,7 @@ header {
 .header {
   justify-content: space-between;
   align-items: center;
+  z-index: 99;
 }
 .logo {
   justify-content: center;
@@ -96,8 +110,8 @@ header {
 .line::before {
   content: "";
   width: 4px;
-  height: 40%;
-  left: 47%;
+  height: 45%;
+  left: 40%;
   background: var(--color-orange);
   position: absolute;
 }
@@ -115,9 +129,241 @@ header {
   transition: all 0.5s;
 }
 
-/* <!--  hero -->
-<!-- bannner -->
-<!--  skills -->
-<!--  project -->
-<!--  About me -->
-<!--  Footer--> */
+/* hero section */
+
+.hero-section {
+  padding-top: 10rem;
+}
+
+.hero {
+  background: var(--color-orange);
+  padding: 0 2rem;
+  color: var(--body-bg);
+
+  display: grid;
+  grid-template-areas: "left right";
+}
+.left {
+  grid-area: left;
+
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vh;
+}
+.left .name {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+.left .tag {
+  font-size: 2.3rem;
+  font-weight: bold;
+  letter-spacing: 5px;
+}
+.left button {
+  padding: 0.8rem 2rem;
+  border: none;
+  background-color: var(--color-dark);
+  border-radius: 2rem;
+  color: var(--body-bg);
+  font-size: 1.1rem;
+}
+.left button i {
+  color: var(--color-orange);
+}
+
+.right {
+  grid-area: right;
+  justify-content: center;
+  align-items: center;
+  margin-top: -4rem;
+}
+
+.right img {
+  height: 115%;
+}
+
+.banner {
+  margin-top: 7rem;
+  border: 2px solid var(--border-color);
+  border-radius: 100px;
+  padding: 2rem;
+  min-height: 7rem;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.banner .info-content .icon-container {
+  background: var(--color-orange);
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+
+  justify-content: center;
+  align-items: center;
+}
+.banner .info-content .icon-container i {
+  color: white;
+  font-size: 2rem;
+}
+.banner .info-content span {
+  font-weight: bold;
+  font-size: 1.3rem;
+  letter-spacing: 2px;
+}
+.banner .info-content p {
+  color: var(--color-orange);
+}
+
+.banner .info-divider {
+  width: 2px;
+  height: 50px;
+  background: grey;
+}
+
+.skills {
+  padding-top: 7rem;
+  font-size: 2rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+.skills > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills i {
+  font-size: 6rem;
+}
+
+/* project */
+
+.projects {
+  margin-top: 3rem;
+  padding-top: 7rem 0rem;
+}
+.projects .projects-container {
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+  gap: 3rem;
+}
+.projects .projects-container .project-card {
+  flex-direction: column;
+  box-shadow: 0 4px 12 px 4px rgba(0, 0, 0, 0.258);
+  border-radius: 5px;
+}
+.projects .projects-container .project-card img {
+  width: 100%;
+}
+
+.about {
+  padding-top: 7rem;
+}
+.about-content {
+  margin-top: 4rem;
+  gap: 3rem;
+}
+/*  */
+.about-content .myimg {
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-content .myimg img {
+  min-width: 350px;
+  max-width: 40px;
+}
+.my-bio h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+.my-bio p:nth-child(4) {
+  font-weight: bolder;
+  margin: 2rem 0;
+}
+.my-bio .tag {
+  font-weight: bold;
+}
+.my-bio .tag + div {
+  padding: 1rem;
+}
+.my-bio .tag + div span {
+  padding: 0.8rem 1.2rem;
+  border-radius: 5px;
+}
+.my-bio .tag + div span:hover {
+  background: grey;
+  cursor: pointer;
+}
+
+.link {
+  margin-top: 7rem;
+}
+.link i {
+  font-size: 6rem;
+}
+.icon {
+  justify-content: center;
+  align-items: center;
+  gap: 10rem;
+  padding-top: 40px;
+}
+
+.email {
+  background: var(--color-dark);
+  padding: 1rem 2rem;
+  color: var(--body-bg);
+  width: 400px;
+  border-radius: 100px;
+}
+.email-section {
+  justify-content: center;
+  margin-top: 4rem;
+}
+.email .send {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--color-orange);
+  justify-content: center;
+  align-items: center;
+}
+
+footer {
+  background: var(--color-dark);
+  color: white;
+  padding: 3rem;
+  margin-top: 50px;
+}
+footer .top {
+  justify-content: center;
+  gap: 3rem;
+}
+
+footer .top ul {
+  list-style: none;
+  padding-left: 0;
+}
+footer .top ul {
+  line-height: 2.5rem;
+}
+
+footer .bottom {
+  text-align: center;
+  margin-top: 2rem;
+}
+.go-up {
+  position: fixed;
+  width: 3rem;
+  height: 3rem;
+  background: var(--color-orange);
+  bottom: 50px;
+  right: 20px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
